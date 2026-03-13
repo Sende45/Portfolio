@@ -2,14 +2,18 @@ import { motion } from 'framer-motion';
 import { Download, FileText, ArrowRight, ShieldCheck, Cpu } from 'lucide-react';
 
 const Downloads = () => {
+  // Chemins vers les fichiers dans ton dossier /public
+  const files = {
+    cv: "/cv-ben-fahad.pdf", 
+    letter: "/manifeste-ben.pdf"
+  };
+
   return (
     <section className="relative overflow-hidden p-1">
-      {/* Background Decor Subtil */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="relative bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/5 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-2xl">
         
-        {/* --- TEXTE D'ENGAGEMENT --- */}
         <div className="space-y-6 max-w-xl text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/5 border border-blue-500/20 text-blue-500">
             <ShieldCheck size={14} />
@@ -26,18 +30,18 @@ const Downloads = () => {
           </p>
         </div>
 
-        {/* --- GRID DE TÉLÉCHARGEMENT --- */}
         <div className="flex flex-col sm:flex-row gap-6 w-full lg:w-auto">
           
           {/* CARTE CV */}
           <motion.a 
             whileHover={{ y: -8, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href="/mon-cv.pdf" 
-            download 
-            className="group relative flex flex-col gap-6 p-8 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-[2.5rem] transition-all shadow-2xl shadow-blue-500/20 overflow-hidden min-w-[240px]"
+            href={files.cv} // Utilise la variable définie plus haut
+            target="_blank" // Ouvre dans un nouvel onglet
+            rel="noopener noreferrer"
+            download="CV_Ben_Fahad_Sende.pdf" // Force le téléchargement et définit le nom du fichier reçu
+            className="group relative flex flex-col gap-6 p-8 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-[2.5rem] transition-all shadow-2xl shadow-blue-500/20 overflow-hidden min-w-[240px] cursor-pointer"
           >
-            {/* Overlay Glow au Hover */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 blur-3xl group-hover:bg-blue-600/40 transition-colors" />
             
             <div className="flex justify-between items-start relative z-10">
@@ -61,9 +65,11 @@ const Downloads = () => {
           <motion.a 
             whileHover={{ y: -8, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href="/ma-lettre.pdf" 
-            download 
-            className="group relative flex flex-col gap-6 p-8 bg-zinc-100 dark:bg-zinc-800/50 text-zinc-900 dark:text-white rounded-[2.5rem] border border-zinc-200 dark:border-white/10 transition-all min-w-[240px]"
+            href={files.letter}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Manifeste_Ben_Fahad.pdf"
+            className="group relative flex flex-col gap-6 p-8 bg-zinc-100 dark:bg-zinc-800/50 text-zinc-900 dark:text-white rounded-[2.5rem] border border-zinc-200 dark:border-white/10 transition-all min-w-[240px] cursor-pointer"
           >
             <div className="flex justify-between items-start">
               <div className="p-3 rounded-2xl bg-zinc-200 dark:bg-white/5 text-zinc-500 dark:text-zinc-400">
@@ -85,7 +91,6 @@ const Downloads = () => {
         </div>
       </div>
 
-      {/* Petit tag technique en bas */}
       <div className="mt-8 flex justify-center lg:justify-end gap-10 opacity-30">
         <div className="flex items-center gap-2">
            <Cpu size={12} />
