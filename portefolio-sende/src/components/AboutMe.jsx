@@ -40,7 +40,7 @@ const AboutMe = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
         
-        {/* --- COLONNE GAUCHE : LE CORE ENGINE (7 colonnes) --- */}
+        {/* --- COLONNE GAUCHE : LE CORE ENGINE --- */}
         <div className="lg:col-span-7 space-y-16">
           
           <motion.div {...reveal} className="space-y-8">
@@ -76,7 +76,6 @@ const AboutMe = () => {
           className="lg:col-span-5"
         >
           <div className="relative group">
-            {/* Image avec effet de profondeur utilisant ton fichier portfolio.png */}
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-zinc-200 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-2xl">
               <img 
                 src={portfolioImg} 
@@ -91,7 +90,6 @@ const AboutMe = () => {
               </div>
             </div>
 
-            {/* Floating Info Tag style Terminal */}
             <div className="absolute -bottom-6 -left-6 md:-left-12 p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl shadow-2xl space-y-3 hidden sm:block">
               <div className="flex gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-red-500/50" />
@@ -122,13 +120,18 @@ const AboutMe = () => {
         ))}
       </motion.div>
 
-      {/* --- CTA CALL TO ACTION --- */}
+      {/* --- NOUVELLE MODIF : CTA VERS LE MANIFESTE --- */}
       <motion.div {...reveal} className="mt-24 flex justify-center">
-        <button className="group relative flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black uppercase text-xs tracking-[0.3em] overflow-hidden transition-all">
-          <span className="relative z-10">Consulter les Spécifications</span>
+        <a 
+          href="/manifeste-ben.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group relative flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black uppercase text-xs tracking-[0.3em] overflow-hidden transition-all shadow-xl"
+        >
+          <span className="relative z-10">Consulter le Manifeste Technique</span>
           <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform" />
           <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-        </button>
+        </a>
       </motion.div>
     </div>
   );
