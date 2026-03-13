@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios'; // 1. On remplace Firebase par Axios
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Github, ArrowUpRight, Terminal } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,12 +8,14 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // 1. URL de ton backend sur Render
+  const API_BASE_URL = "https://portfolio-backend-evbb.onrender.com";
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        // 2. Appel à ton propre Backend MERN
-        // Note: Utilise ton URL de prod quand tu auras déployé
-        const response = await axios.get('http://localhost:5000/api/projects');
+        // 2. Appel à l'API de production
+        const response = await axios.get(`${API_BASE_URL}/api/projects`);
         setProjects(response.data);
       } catch (error) {
         console.error("API Error:", error);
@@ -37,7 +39,7 @@ const Projects = () => {
     <div className="space-y-64 pb-40">
       {projects.map((project, index) => (
         <motion.div 
-          key={project._id} // 3. MongoDB utilise _id au lieu de id
+          key={project._id} 
           {...reveal}
           className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
         >
@@ -48,7 +50,7 @@ const Projects = () => {
             </span>
             <div className="h-20 w-[1px] bg-zinc-200 dark:bg-white/10" />
             <div className="flex flex-col gap-4">
-              {project.repoUrl && ( // 4. On utilise repoUrl de ta base Atlas
+              {project.repoUrl && (
                 <a href={project.repoUrl} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-blue-600 transition-colors">
                   <Github size={20}/>
                 </a>
@@ -60,7 +62,7 @@ const Projects = () => {
           <div className="lg:col-span-7 group">
             <Link to={`/project/${project._id}`} className="relative block aspect-[16/10] overflow-hidden rounded-[3rem] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-2xl transition-all duration-700 hover:shadow-blue-600/20">
               <img 
-                src={project.imageUrl || "/placeholder.jpg"} // 5. imageUrl match Atlas
+                src={project.imageUrl || "/placeholder.jpg"} 
                 alt={project.title}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-1000 ease-out"
               />
@@ -98,7 +100,7 @@ const Projects = () => {
 
             {/* Stack Tags */}
             <div className="flex flex-wrap gap-2">
-              {project.techStack?.map(tech => ( // 6. techStack match Atlas
+              {project.techStack?.map(tech => (
                 <span key={tech} className="px-3 py-1 bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-lg text-[9px] font-black uppercase tracking-widest text-zinc-500">
                   {tech}
                 </span>
