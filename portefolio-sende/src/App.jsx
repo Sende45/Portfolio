@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 // Pages & Components
 import Home from './pages/Home';
+import ProjectDetail from './components/ProjectDetail'; // <-- NOUVELLE MODIF
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -42,8 +43,13 @@ function AppContent() {
 
       <main className="relative z-10"> 
         <AnimatePresence mode="wait">
+          {/* Le key={location.pathname} permet de déclencher l'animation au changement de route */}
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
+            
+            {/* --- NOUVELLE ROUTE POUR LE CASE STUDY --- */}
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            
           </Routes>
         </AnimatePresence>
       </main>
