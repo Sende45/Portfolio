@@ -120,7 +120,7 @@ const AboutMe = () => {
         ))}
       </motion.div>
 
-      {/* --- NOUVELLE MODIF : CTA VERS LE MANIFESTE --- */}
+      {/* --- LE BOUTON DE TÉLÉCHARGEMENT --- */}
       <motion.div {...reveal} className="mt-24 flex justify-center">
         <a 
           href="/manifeste-ben.pdf" 
@@ -128,7 +128,7 @@ const AboutMe = () => {
           rel="noopener noreferrer"
           className="group relative flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black uppercase text-xs tracking-[0.3em] overflow-hidden transition-all shadow-xl"
         >
-          <span className="relative z-10">Consulter le Manifeste Technique</span>
+          <span className="relative z-10">Consulter les Spécifications</span>
           <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform" />
           <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
         </a>
