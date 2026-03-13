@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* En Tailwind 4, le mode sombre par classe n'est plus automatique.
+   Cette ligne force Tailwind à activer les variantes "dark:" 
+   quand il trouve la classe .dark sur un parent (le <html>).
+*/
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fafafa; /* Couleur mode clair */
+  --foreground: #09090b;
+}
+
+.dark {
+  --background: #050505; /* Ton noir Dashboard */
+  --foreground: #fafafa;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s ease;
+}
