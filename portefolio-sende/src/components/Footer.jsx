@@ -23,10 +23,10 @@ const Footer = () => {
           {/* LIENS SOCIAUX ÉPURÉS (TEXTE UNIQUEMENT) */}
           <div className="flex flex-wrap gap-x-12 gap-y-4">
             {[
-              { name: 'LinkedIn', url: '#' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ben-fahad-sende-soumouk-309a69224' },
               { name: 'Github', url: 'https://github.com/Sende45' },
-              { name: 'X-Twitter', url: '#' },
-              { name: 'Email', url: 'mailto:hello@sende.studio' }
+              { name: 'X-Twitter', url: 'https://x.com/SendeYohan27751' },
+              { name: 'Email', url: 'mailto:yohannesende@gmail.com' }
             ].map((link) => (
               <a 
                 key={link.name} 
