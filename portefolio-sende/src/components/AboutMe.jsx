@@ -120,16 +120,17 @@ const AboutMe = () => {
         ))}
       </motion.div>
 
-      {/* --- LE BOUTON DE TÉLÉCHARGEMENT --- */}
+      {/* --- LE BOUTON DE TÉLÉCHARGEMENT CORRIGÉ --- */}
       <motion.div {...reveal} className="mt-24 flex justify-center">
         <a 
-          href="/manifeste-ben.pdf" 
+          href="/BEN%20FAHAD%20SENDE%20SOUMOUK.docx" 
           target="_blank" 
           rel="noopener noreferrer"
+          download="Manifeste_Ben_Fahad.docx"
           className="group relative flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black uppercase text-xs tracking-[0.3em] overflow-hidden transition-all shadow-xl"
         >
-          <span className="relative z-10">Consulter les Spécifications</span>
-          <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+          <span className="relative z-10 transition-colors group-hover:text-white">Consulter le Manifeste</span>
+          <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-all group-hover:text-white" />
           <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
         </a>
       </motion.div>
