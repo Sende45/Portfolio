@@ -50,7 +50,7 @@ const Home = () => {
               </h2>
             </motion.div>
             <motion.p {...revealText} className="max-w-sm text-zinc-500 dark:text-zinc-400 text-lg font-medium leading-tight">
-              Conception d'applications métier scalables — De l'immobilier aux systèmes de réservation automatisés.
+              Des écosystèmes complets, du concept à la production. Chaque ligne de code pensée pour la performance.
             </motion.p>
           </div>
 

@@ -64,7 +64,7 @@ const AboutMe = () => {
               <Layout className="text-blue-600 mb-6" size={28} />
               <h4 className="text-sm font-black uppercase tracking-widest mb-4">Frontend Engineering</h4>
               <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-                Interfaces réactives et ultra-fluides avec **React & Vite**. Utilisation de **Framer Motion** pour une expérience utilisateur cinématique.
+                Interfaces réactives et ultra-fluides avec **React, Vite, Next.js**. Utilisation de **Framer Motion** pour une expérience utilisateur cinématique.
               </p>
             </motion.div>
           </div>
