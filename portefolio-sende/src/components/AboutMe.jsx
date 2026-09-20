@@ -110,7 +110,7 @@ const AboutMe = () => {
         {[
           { label: 'React / Next.js', value: 'Expert' },
           { label: 'Node / Express', value: 'Master' },
-          { label: 'Firebase / NoSQL / mongodb / Postgresql', value: 'Advanced' },
+          { label: 'Firebase / NoSQL / MongoDB / PostgreSQL²²²²', value: 'Advanced' },
           { label: 'Docker / CI-CD', value: 'Ready' }
         ].map((tech, i) => (
           <div key={i} className="p-6 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/5 flex flex-col gap-1">

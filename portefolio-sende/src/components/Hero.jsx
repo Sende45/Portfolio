@@ -66,7 +66,7 @@ const Hero = () => {
           className="lg:col-span-5"
         >
           <p className="text-xl md:text-2xl font-medium text-zinc-500 dark:text-zinc-400 leading-tight italic max-w-md">
-            "Ingénierie d'interfaces <span className="text-zinc-900 dark:text-white font-bold">hautes performances</span> et architectures scalables."
+            "Je construis des plateformes web complètes <span className="text-zinc-900 dark:text-white font-bold">SaaS, marketplaces, e-commerce</span> De la base de données au déploiement."
           </p>
         </motion.div>
 
