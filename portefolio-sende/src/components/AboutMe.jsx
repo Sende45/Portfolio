@@ -97,7 +97,7 @@ const AboutMe = () => {
               </div>
               <p className="text-[10px] font-mono text-zinc-400 leading-tight">
                 STATUS: <span className="text-green-500">AVAILABLE</span><br />
-                STACK: <span className="text-blue-600">MERN_CERTIFIED</span><br />
+                STACK: <span className="text-blue-600">MERN_CERTIFIED, POSTGRESQL, MONGODB, Next.JS</span><br />
                 LOCATION: <span className="text-zinc-600 dark:text-zinc-200">ABIDJAN_CI</span>
               </p>
             </div>
@@ -110,7 +110,7 @@ const AboutMe = () => {
         {[
           { label: 'React / Next.js', value: 'Expert' },
           { label: 'Node / Express', value: 'Master' },
-          { label: 'Firebase / NoSQL', value: 'Advanced' },
+          { label: 'Firebase / NoSQL / mongodb / Postgresql', value: 'Advanced' },
           { label: 'Docker / CI-CD', value: 'Ready' }
         ].map((tech, i) => (
           <div key={i} className="p-6 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/5 flex flex-col gap-1">
