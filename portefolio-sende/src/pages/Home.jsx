@@ -8,6 +8,7 @@ import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
 import Updates from '../components/Updates';
 import Downloads from '../components/Downloads'; // <-- NOUVELLE IMPORTATION
+import Services from '../sections/Services';
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -35,6 +36,7 @@ const Home = () => {
       </section>
 
       {/* 2. PROJECTS SECTION */}
+            {/* 2. PROJECTS SECTION */}
       <section id="projects" className="relative px-6 py-32 border-t border-zinc-200 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
@@ -53,6 +55,13 @@ const Home = () => {
           </div>
 
           <Projects />
+        </div>
+      </section>
+
+            {/* 3. SERVICES SECTION */}
+      <section id="services" className="relative px-6 py-32 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-[#050505]">
+        <div className="max-w-7xl mx-auto">
+          <Services />
         </div>
       </section>
 

@@ -13,6 +13,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import AdminProjectForm from './pages/AdminProjectForm';
 import ProtectedRoute from './components/ProtectedRoute';
 
+
 function AppContent() {
   const location = useLocation();
   const { scrollY } = useScroll();
@@ -52,6 +53,7 @@ function AppContent() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            
 
             {/* Routes admin */}
             <Route path="/admin/login" element={<AdminLogin />} />
