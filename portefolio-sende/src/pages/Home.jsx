@@ -124,36 +124,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. CONTACT SECTION */}
-      <section id="contact" className="relative py-48 px-6 text-center overflow-hidden bg-white dark:bg-[#030303]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
-        
-        <motion.div 
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto space-y-16"
-        >
-          <div className="space-y-4">
-              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-600">Available Q2 2026</span>
-              <h2 className="text-6xl md:text-[10vw] font-black uppercase tracking-tighter leading-none text-zinc-900 dark:text-white">
-                Let's <span className="text-blue-600 italic">Deploy.</span>
-              </h2>
-          </div>
-
-          <motion.a 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="mailto:hello@sende.studio" 
-            className="group relative inline-flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full text-xl font-black uppercase tracking-widest overflow-hidden transition-all shadow-xl"
-          >
-            <span className="relative z-10">Initiate Protocol</span>
-            <ArrowUpRight className="relative z-10 group-hover:rotate-45 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
-          </motion.a>
-        </motion.div>
-      </section>
-
             {/* 6. CONTACT SECTION */}
       <section id="contact" className="relative py-32 md:py-48 px-6 overflow-hidden bg-white dark:bg-[#030303]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
