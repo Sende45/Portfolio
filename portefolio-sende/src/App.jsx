@@ -2,20 +2,26 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-// Pages & Components
 import Home from './pages/Home';
-import ProjectDetail from './components/ProjectDetail'; // <-- NOUVELLE MODIF
+import ProjectDetail from './components/ProjectDetail';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+// --- NOUVEAU ---
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminProjectForm from './pages/AdminProjectForm';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function AppContent() {
   const location = useLocation();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
+  const isAdmin = location.pathname.startsWith('/admin');
 
   useEffect(() => {
     const handleMouseMove = (e) => setMousePos({ x: e.clientX, y: e.clientY });
@@ -29,33 +35,34 @@ function AppContent() {
 
   return (
     <div className="bg-zinc-50 dark:bg-[#030303] min-h-screen transition-colors duration-700 overflow-x-hidden">
-      
-      {/* CURSEUR ELITE - Toujours présent mais discret */}
-      <motion.div 
-        className="fixed top-0 left-0 w-8 h-8 border border-blue-600 rounded-full pointer-events-none z-[999] hidden lg:block"
-        animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
-      />
 
-      {/* BARRE DE PROGRESSION TOP */}
-      <motion.div className="fixed top-0 left-0 right-0 h-[3px] bg-blue-600 origin-left z-[100]" style={{ scaleX }} />
+      {!isAdmin && (
+        <>
+          <motion.div
+            className="fixed top-0 left-0 w-8 h-8 border border-blue-600 rounded-full pointer-events-none z-[999] hidden lg:block"
+            animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
+          />
+          <motion.div className="fixed top-0 left-0 right-0 h-[3px] bg-blue-600 origin-left z-[100]" style={{ scaleX }} />
+          <Header isScrolled={isScrolled} />
+        </>
+      )}
 
-      <Header isScrolled={isScrolled} />
-
-      <main className="relative z-10"> 
+      <main className="relative z-10">
         <AnimatePresence mode="wait">
-          {/* Le key={location.pathname} permet de déclencher l'animation au changement de route */}
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
-            
-            {/* --- NOUVELLE ROUTE POUR LE CASE STUDY --- */}
             <Route path="/project/:id" element={<ProjectDetail />} />
-            
+
+            {/* Routes admin */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+            <Route path="/admin/new" element={<ProtectedRoute><AdminProjectForm /></ProtectedRoute>} />
+            <Route path="/admin/edit/:id" element={<ProtectedRoute><AdminProjectForm /></ProtectedRoute>} />
           </Routes>
         </AnimatePresence>
       </main>
 
-      <Footer />
-
+      {!isAdmin && <Footer />}
     </div>
   );
 }
