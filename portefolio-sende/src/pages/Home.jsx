@@ -197,7 +197,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              href="CALENDLY_LINK"
+              href="https://calendly.com/yohannesende/new-meeting"
               target="_blank"
               rel="noreferrer"
               className="group flex flex-col gap-4 p-6 border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-blue-600 dark:hover:border-blue-600 transition-colors bg-white dark:bg-white/[0.02]"
