@@ -7,8 +7,25 @@ const projectSchema = new mongoose.Schema({
   demoUrl: { type: String },
   repoUrl: { type: String },
   imageUrl: { type: String },
-  imagePublicId: { type: String }, // ← NOUVEAU pour supprimer l'image
-  category: { type: String, enum: ['SaaS', 'Mobile', 'Web'], default: 'Web' },
+  imagePublicId: { type: String }, // ← pour supprimer l'image
+  category: {
+    type: String,
+    enum: [
+      'SaaS',
+      'Mobile',
+      'Web',
+      'E-commerce',
+      'Marketplace',
+      'Institutionnel',
+      'Vitrine',
+      'Événementiel',
+      'Immobilier',
+      'Fintech',
+      'Beauté',
+      'Autre',
+    ],
+    default: 'Web',
+  },
   featured: { type: Boolean, default: false },
 }, {
   timestamps: true,
