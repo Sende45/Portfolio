@@ -153,7 +153,7 @@ const Home = () => {
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="CALENDLY_LINK"
+              href="https://calendly.com/yohannesende/new-meeting"
               target="_blank"
               rel="noreferrer"
               className="group relative inline-flex items-center gap-6 px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full text-xl font-black uppercase tracking-widest overflow-hidden transition-all shadow-xl"
