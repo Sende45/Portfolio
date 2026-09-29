@@ -22,7 +22,7 @@ const Hero = () => {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
         </div>
         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500">
-          Available for hire // 2026
+          
         </span>
       </motion.div>
 
